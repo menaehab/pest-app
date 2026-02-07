@@ -49,4 +49,10 @@ dataset('users', [
 test('check if email contains @ symbol', function ($user) {
     expect($user['email'])->toContain('@')->toBeString()->not->toBeInt();
     expect($user['name'])->toBe('Mena');
-})->with('users');
+})->with('users')->skip(2 == 1, 'Skipping this test for demonstration purposes.')->group('email tests');
+
+
+test('check if email contains @ symbol todo', function ($user) {
+    expect($user['email'])->toContain('@')->toBeString()->not->toBeInt();
+    expect($user['name'])->toBe('Mena');
+})->with('users')->skip(2 == 1, 'Skipping this test for demonstration purposes.')->todo()->group('email tests');
