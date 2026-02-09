@@ -45,3 +45,10 @@ function something()
 {
     // ..
 }
+
+function actUser($test)
+{
+    $user = \App\Models\User::factory()->create();
+
+    return $test->actingAs($user);
+}

@@ -12,7 +12,7 @@ class DiscountService
      * @return float The price after applying the discount.
      * @throws \InvalidArgumentException If inputs are invalid.
      */
-    public static function getPriceAfterDiscount(float $originalPrice, float $discountPercentage): float
+    public function getDiscountedPrice(float $originalPrice, float $discountPercentage): float
     {
         if ($originalPrice < 0 || $discountPercentage < 0 || $discountPercentage > 100) {
             throw new \InvalidArgumentException('Invalid price or discount percentage.');
